@@ -8,8 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Movie {
-	
-	
+		
 	private String title;
 	private String director;
 

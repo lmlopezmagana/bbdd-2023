@@ -9,8 +9,12 @@ public class MovieLister {
 	private MovieFinder finder;
 	
 	public MovieLister() {
-		//finder = new MovieFinderImpl();
-		finder = new CsvMovieFinder();
+		finder = new MovieFinderImpl();
+		//finder = new CsvMovieFinder();
+	}
+	
+	public MovieLister(MovieFinder finder) {
+		this.finder = finder;
 	}
 	
 	
