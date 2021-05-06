@@ -6,5 +6,6 @@ public interface Saludator {
 	
 	public String saludar(String nombre);
 	
+	public void configUpperCase(boolean inUpperCase);
 
 }

@@ -2,7 +2,7 @@ package com.example.demo;
 
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("enIngles")
 public class EnglishSaludator implements Saludator {
 
 	@Override

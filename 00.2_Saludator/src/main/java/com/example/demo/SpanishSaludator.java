@@ -1,9 +1,10 @@
 package com.example.demo;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 @Service
-//@Primary
+@Primary
 public class SpanishSaludator implements Saludator {
 
 	@Override

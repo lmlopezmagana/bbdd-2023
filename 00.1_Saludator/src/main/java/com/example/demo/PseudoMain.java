@@ -12,6 +12,8 @@ import lombok.RequiredArgsConstructor;
 public class PseudoMain {
 	
 	private final Saludator saludador;
+	/*@Autowired
+	private Saludator saludador;*/
 	
 	
 	@PostConstruct
