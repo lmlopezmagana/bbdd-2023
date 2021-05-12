@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -33,7 +34,7 @@ public class Curso {
 	
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
-	@OneToMany(mappedBy="curso")
+	@OneToMany(mappedBy="curso", fetch = FetchType.EAGER)
 	private List<Alumno> alumnos = new ArrayList<>();
 	
 	/********************************************/

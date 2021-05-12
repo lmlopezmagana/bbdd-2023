@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border=1>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Tipo</th>
+				<th>Mapa</th>
+				<th>Comentarios</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="bar : ${bares}">
+				<td><span th:text="${bar.id}">1</span></td>
+				<td><span th:text="${bar.nombre}">La Esperanza</span></td>
+				<td><span th:text="${bar.tipo}">Churros, Menú, Económico</span></td>
+				<td><a th:href="@{http://www.google.com/maps/place/{coord}(coord=${bar.localizacion})}">
+					 Ver en el mapa</a></td>
+				<td>
+					<p th:each="comentario : ${bar.comentarios}">
+						<span th:text="${comentario.valoracion}">5</span>
+						<span th:text="${comentario.texto}">Texto</span>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

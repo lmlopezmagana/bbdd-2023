@@ -30,7 +30,8 @@ public class Application {
 			cursoServicio.save(nuevoCurso);
 
 			// Creamos un nuevo conjunto de alumnos
-			List<Alumno> nuevos = Arrays.asList(new Alumno("Antonio", "Pérez", "antonio.perez@gmail.com"),
+			List<Alumno> nuevos = Arrays.asList(
+					new Alumno("Antonio", "Pérez", "antonio.perez@gmail.com"),
 					new Alumno("María", "López", "maria.lopez@gmail.com"));
 
 
@@ -88,7 +89,7 @@ public class Application {
 			System.out.println("\n\nDatos almacenados");
 			
 			System.out.println(cursoAlmacenado);
-			//System.out.println(cursoAlmacenado.getAlumnos());
+			System.out.println(cursoAlmacenado.getAlumnos());
 			
 			alumnosAlmacenados.forEach(System.out::println);
 			
