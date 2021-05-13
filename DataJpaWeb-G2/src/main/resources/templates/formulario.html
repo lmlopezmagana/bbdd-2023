@@ -8,16 +8,40 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Alumno</title>
+    <title>Alumnos</title>
   </head>
   <body>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-6">
-          <img width="72px" src="https://robohash.org/luismi" th:src="@{https://robohash.org/{email}(email=${alumno.email})}" />
-          <p th:text="${alumno.nombre}"></p>
-          <p th:text="${alumno.apellidos}"></p>
-          <p th:text="${alumno.curso.nombre}"></p>
+			<form method="POST" th:action="@{/alumno/submit}" 
+					th:object="${alumno}">
+				<label>Nombre</label>
+				<input type="text" th:field="*{nombre}"
+					placeholder="Nombre del alumno" />
+				<br />
+				<label>Apellidos</label>
+				<input type="text" th:field="*{apellidos}"
+					placeholder="Apellidos del alumno" />
+				<br />
+
+				<label>Email</label>
+				<input type="email" th:field="*{email}"
+					placeholder="Email del alumno" />
+				<br />
+						
+				<label>Curso</label>		
+				<select th:field="*{curso}">
+					<option value="-1">---</option>
+					<option th:each="curso : ${cursos}"
+							th:value="${curso.id}" th:text="${curso.nombre}">
+							Primer curso
+							</option>
+				</select>
+				<br />
+				
+				<button type="submit" class="btn btn-default">Enviar</button>	
+			</form>    
         </div>
       </div>
     </div>

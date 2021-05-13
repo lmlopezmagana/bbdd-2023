@@ -20,13 +20,17 @@
                 <th>id</th>
                 <th>Nombre</th>
                 <th>Apellidos</th>
+                <th>Curso</th>
               </tr>
             </thead>
             <tbody>
               <tr th:each="alumno : ${alumnos}">
-                <td th:text="${alumno.id}">1</td>
+                <td>
+                	<a th:href="@{/alumnos/{id}(id=${alumno.id})}">Ver detalle</a>
+                </td>
                 <td th:text="${alumno.nombre}">Luismi</td>
                 <td th:text="${alumno.apellidos}">De Triana</td>
+                <td th:text="${alumno.curso.nombre}">1º DAM</td>
               </tr>
             </tbody>
           </table>

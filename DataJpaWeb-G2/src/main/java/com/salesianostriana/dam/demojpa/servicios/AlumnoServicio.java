@@ -7,7 +7,9 @@ import com.salesianostriana.dam.demojpa.repos.AlumnoRepository;
 import com.salesianostriana.dam.demojpa.servicios.base.BaseService;
 
 @Service
-public class AlumnoService 
-	extends BaseService<Alumno, Long, AlumnoRepository>{
+public class AlumnoServicio extends BaseService<Alumno, Long, AlumnoRepository>{
 
+	
+
+	
 }

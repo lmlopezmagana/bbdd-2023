@@ -1,11 +1,15 @@
 package com.salesianostriana.dam.demojpa;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Component;
 
 import com.salesianostriana.dam.demojpa.modelo.Alumno;
-import com.salesianostriana.dam.demojpa.servicios.AlumnoService;
+import com.salesianostriana.dam.demojpa.modelo.Curso;
+import com.salesianostriana.dam.demojpa.servicios.AlumnoServicio;
+import com.salesianostriana.dam.demojpa.servicios.CursoServicio;
 
 import lombok.RequiredArgsConstructor;
 
@@ -13,19 +17,25 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class InitData {
 	
-	private final AlumnoService servicio;
+	private final AlumnoServicio alumnoServicio;
+	private final CursoServicio cursoServicio;
+	
 	
 	@PostConstruct
 	public void init() {
 		
-		Alumno a = new Alumno("Luismi", "López");
-		Alumno b = new Alumno("Ángel", "Naranjo");
-		Alumno c = new Alumno("Rafa", "Villar");
-
-		servicio.save(a);
-		servicio.save(b);
-		servicio.save(c);
+		List<Curso> cursos = List.of(
+				new Curso("1º DAM", "Miguel Campos"),
+				new Curso("2º DAM", "Luismi López"),
+				new Curso("2º IEA", "Rafa Villar")
+				);
 		
+		cursos.forEach(cursoServicio::save);
+		
+				
+		Alumno a = new Alumno("Jesús", "Barco", "barco.esjes20@triana.salesianos.edu", cursoServicio.findById(1L).get());
+		
+		alumnoServicio.save(a);
 	}
 
 }
