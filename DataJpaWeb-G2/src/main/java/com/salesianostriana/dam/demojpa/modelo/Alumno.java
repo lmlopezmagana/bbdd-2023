@@ -16,7 +16,7 @@ public class Alumno {
 	@GeneratedValue
 	private long id;
 	
-	private String nombre, apellidos, email;
+	private String nombre, apellidos, email, tipo;
 	
 	@ManyToOne
 	private Curso curso;
