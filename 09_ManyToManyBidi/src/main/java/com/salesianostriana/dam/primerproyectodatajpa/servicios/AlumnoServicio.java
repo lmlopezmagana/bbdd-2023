@@ -9,9 +9,7 @@ import com.salesianostriana.dam.primerproyectodatajpa.servicios.base.BaseService
 @Service
 public class AlumnoServicio extends BaseService<Alumno, Long, AlumnoRepository>{
 
-	public AlumnoServicio(AlumnoRepository repo) {
-		super(repo);
-	}
+	
 
 	
 }

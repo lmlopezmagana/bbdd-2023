@@ -1,6 +1,7 @@
 package com.salesianostriana.dam.demojpa.controladores;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.salesianostriana.dam.demojpa.modelo.Alumno;
 import com.salesianostriana.dam.demojpa.modelo.Curso;
@@ -24,9 +26,29 @@ public class AlumnoController {
 	private final AlumnoServicio servicio;
 	private final CursoServicio cursoServicio;
 	
-	@GetMapping("/alumnos")
-	public String todosLosAlumnos(Model model) {
-		model.addAttribute("alumnos", servicio.findAll());		
+	@GetMapping({"/", "/alumnos"})
+	public String todosLosAlumnos(Model model, 
+			@RequestParam("q") Optional<String> consulta) {
+		
+		List<Alumno> alumnos;
+		
+		if (consulta.isEmpty()) {
+			alumnos = servicio.findAll();
+		} else {
+			alumnos = servicio.buscarPorApellido(consulta.get());
+		}
+
+		model.addAttribute("alumnos", alumnos);					
+
+		return "index";
+	}
+	
+	@GetMapping("/alumnos/curso/{id}")
+	public String todosLosAlumnos(Model model, 
+			@PathVariable("id") Long id) {
+		
+		model.addAttribute("alumnos", servicio.todosLosAlumnosDeUnCurso(id));					
+
 		return "index";
 	}
 	

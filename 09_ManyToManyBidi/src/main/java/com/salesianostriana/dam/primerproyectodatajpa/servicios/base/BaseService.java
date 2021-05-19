@@ -2,6 +2,7 @@ package com.salesianostriana.dam.primerproyectodatajpa.servicios.base;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -18,13 +19,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public abstract class BaseService<T, ID, R extends JpaRepository<T, ID>> implements IBaseService<T, ID> {
 
-	
+	@Autowired
 	protected R repositorio;
 	
 	
-	public BaseService(R repo) {
-		this.repositorio = repo;
-	}
+	
 	
 	/**
 	 * Almacenamos una nueva entidad a través del repositorio

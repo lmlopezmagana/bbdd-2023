@@ -34,8 +34,13 @@ public class InitData {
 		
 				
 		Alumno a = new Alumno("Jesús", "Barco", "barco.esjes20@triana.salesianos.edu", cursoServicio.findById(1L).get());
+		Alumno b = new Alumno("Luismi", "López", "luismi.lopez@salesianos.edu", cursoServicio.findById(1L).get());
+		Alumno c = new Alumno("Ángel", "Naranjo", "angel@angel.com", cursoServicio.findById(2L).get());
+		
 		
 		alumnoServicio.save(a);
+		alumnoServicio.save(b);
+		alumnoServicio.save(c);
 	}
 
 }

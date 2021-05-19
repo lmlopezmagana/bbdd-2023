@@ -12,9 +12,19 @@
   </head>
   <body>
     <div class="container">
-    	<a th:href="@{/alumno/nuevo}" class="btn btn-primary">Nuevo alumno</a>
       <div class="row justify-content-center">
-        <div class="col-6">
+      	<div class="col-3">
+      		<ul>
+      			<th:block th:each="curso : ${cursos}">
+      			<li><a th:href="@{/alumnos/curso/{id}(id=${curso.id})}" th:text="${curso.nombre}">Hola</a></li>
+      			</th:block>
+      		</ul>
+      	</div>
+        <div class="col-9">
+        	
+        	<input type="text" name="q" th:value="${param.q}" placeholder="Apellidos..." onchange="window.location.href='http://localhost:9000/?q=' + this.value" />
+        	<a th:href="@{/alumno/nuevo}" class="btn btn-primary">Nuevo alumno</a>
+        
           <table class="table table-light">
             <thead class="thead-light">
               <tr>

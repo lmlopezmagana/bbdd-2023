@@ -11,9 +11,7 @@ import com.salesianostriana.dam.primerproyectodatajpa.servicios.base.BaseService
 @Service
 public class CursoServicio extends BaseService<Curso, Long, CursoRepository> {
 
-	public CursoServicio(CursoRepository repo) {
-		super(repo);
-	}
+
 
 	public List<Curso> findAllWithAsig() {
 		return this.repositorio.findAllWithAsig();
