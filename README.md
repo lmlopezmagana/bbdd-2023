@@ -1,5 +1,5 @@
 # Bases de datos - 2020/21
-Repositorio del módulo de Bases de Datos para el curso 2019-20 (DAM - Salesianos Triana)
+Repositorio del módulo de Bases de Datos para el curso 2020-21 (DAM - Salesianos Triana)
 
 A continuación, se detallan los proyectos que se incluyen dentro del repositorio.
 
