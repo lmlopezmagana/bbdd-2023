@@ -260,7 +260,7 @@ public class Curso {
 
 > La anotación `@Builder.Default` nos permite establecer un valor por defecto para un atributo, de forma que si no se le asigna un valor mediante al usar `Curso.builder()`, se queda con dicho valor por defecto.
 
-> El atributo `fetch = FetchType.EAGER` nos permite que al rescatar un `Curso`, obtengamos siempre los alumnos asociados. **Por defecto, durante este año trataremos así todas las asociaciones `XXXToMany`, y el próximo curso daremos una solución más eficiente.
+> El atributo `fetch = FetchType.EAGER` nos permite que al rescatar un `Curso`, obtengamos siempre los alumnos asociados. **Por defecto, durante este año trataremos así todas las asociaciones `XXXToMany`, y el próximo curso daremos una solución más eficiente**.
 
 
 
