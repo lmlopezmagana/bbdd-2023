@@ -174,6 +174,12 @@ La asociación `está-en` entre las clases `Alumno` y `Curso` se suele decir que
 
 Como podemos ver en el énfasis del texto, por cuestiones de rendimiento las mejores opciones son las dos últimas. En este ejemplo veremos la **implementación bidireccional**.
 
+### Paso 0: Diseño de la solución orientada a objetos
+
+Si determinamos que vamos a darle un enfoque bidireccional, el diagrama de clases de la solución al problema sería este:
+
+![UML](./png/uml2_diseñobidi.png)
+
 ### Paso 1: Asociación en el lado _muchos_
 
 Ya la tenemos del ejemplo anterior:

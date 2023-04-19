@@ -5,5 +5,5 @@ A continuación, se detallan los proyectos que se incluyen dentro del repositori
 
 - [Ejemplo 1 - PrimerProyectoDataJpa](./PrimerProyectoDataJpa/): ejemplo de creación de un proyecto desde cero que incluye Spring Data JPA y la base de datos H2. También se puede ver la creación de una entidad, un repositorio, y un ejemplo de su uso.
 
-- [Ejemplo 2](./ManyToOne/): ejemplo que en primera instancia implementa una asociación `@ManyToOne` de forma unidireccional, y que posteriormente la completa bidireccionalmente con una asociación `@OneToMany`. 
+- [Ejemplo 2 - ManyToOne](./ManyToOne/): ejemplo que en primera instancia implementa una asociación `@ManyToOne` de forma unidireccional, y que posteriormente la completa bidireccionalmente con una asociación `@OneToMany`. 
 
