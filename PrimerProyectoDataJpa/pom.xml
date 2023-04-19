@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.6.RELEASE</version>
+		<version>2.7.10</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.salesianostriana.dam</groupId>
-	<artifactId>05_PrimerProyectoDataJpa</artifactId>
+	<artifactId>PrimerProyectoDataJpa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>05_PrimerProyectoDataJpa</name>
+	<name>PrimerProyectoDataJpa</name>
 	<description>Primer Proyecto con Spring Boot</description>
 
 	<properties>

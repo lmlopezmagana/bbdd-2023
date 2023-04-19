@@ -1,5 +1,5 @@
 
-# Ejemplo 5 - Primer ejemplo con Spring Data JPA
+# Ejemplo 1 - Primer ejemplo con Spring Data JPA
 
 Este es el primer ejemplo en el que integramos el acceso a base de datos con Spring Data JPA. Para crearlo, hemos utilizado el asistente que encontramos en _File > New > Spring Starter Project_. Hemos añadido las siguientes dependencias (las hemos añadido a través de dicho asistente, y este es el resultado en el `pom.xml`:
 
