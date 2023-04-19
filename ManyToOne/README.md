@@ -178,7 +178,7 @@ Como podemos ver en el énfasis del texto, por cuestiones de rendimiento las mej
 
 Si determinamos que vamos a darle un enfoque bidireccional, el diagrama de clases de la solución al problema sería este:
 
-![UML](./png/uml2_diseñobidi.png)
+![UML](./png/uml3_diseñobidis.png)
 
 ### Paso 1: Asociación en el lado _muchos_
 
