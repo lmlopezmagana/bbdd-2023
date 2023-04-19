@@ -260,6 +260,10 @@ public class Curso {
 
 > La anotación `@Builder.Default` nos permite establecer un valor por defecto para un atributo, de forma que si no se le asigna un valor mediante al usar `Curso.builder()`, se queda con dicho valor por defecto.
 
+> El atributo `fetch = FetchType.EAGER` nos permite que al rescatar un `Curso`, obtengamos siempre los alumnos asociados. **Por defecto, durante este año trataremos así todas las asociaciones `XXXToMany`, y el próximo curso daremos una solución más eficiente.
+
+
+
 ### Paso 3: Métodos auxiliares para mantener ambos extremos de la asociación
 
 El tratamiento bidireccional de la asociación no es gratuito. Si queremos dar a una asociación un tratamiento bidireccional, tendremos que **asignar la asociación en ambos extremos**. Para facilitar la operación, se suelen crear unos métodos auxiliares (en ocasiones conocidos como _helpers_) que realicen esta doble asignación.
