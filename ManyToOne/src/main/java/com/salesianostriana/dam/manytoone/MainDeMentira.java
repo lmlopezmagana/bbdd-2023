@@ -41,19 +41,34 @@ public class MainDeMentira {
 		c.setTutor("Miguel");
 		
 		cursoRepositorio.save(c);
-		
+		/*
 		a1.setCurso(c);
 		a2.setCurso(c);
+		
+		c.getAlumnos().add(a1);
+		c.getAlumnos().add(a2);
+		*/
+		
+		a1.addToCurso(c);
+		a2.addToCurso(c);
 
 		alumnoRepositorio.save(a1);
 		alumnoRepositorio.save(a2);
 
 		
-		List<Curso> cursos = 
+		/*List<Curso> cursos = 
 				cursoRepositorio.findAll();
 		
 		for(Curso curso : cursos) {
 			System.out.println(curso);
+			for(Alumno a : curso.getAlumnos()) {
+				System.out.println(a);
+			}
+		}*/
+		
+		System.out.println(c);
+		for(Alumno a : c.getAlumnos()) {
+			System.out.println(a);
 		}
 		
 	}

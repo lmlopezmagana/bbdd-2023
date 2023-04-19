@@ -12,7 +12,9 @@ import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Data
@@ -28,6 +30,8 @@ public class Curso {
 	private String nombre, tutor;
 	
 	
+	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
 	@OneToMany(mappedBy="curso", fetch = FetchType.EAGER)
 	@Builder.Default
 	private List<Alumno> alumnos = new ArrayList<>();

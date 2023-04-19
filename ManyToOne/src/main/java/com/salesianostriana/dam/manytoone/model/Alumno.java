@@ -28,5 +28,20 @@ public class Alumno {
 	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name="fk_alumno_curso"))	
 	private Curso curso;
+	
+	/*
+	 * MÉTODOS HELPER PARA LA ASOCIACIÓN CON CURSO
+	 */
+	
+	public void addToCurso(Curso curso) {
+		this.curso = curso;
+		curso.getAlumnos().add(this);
+	}
+	
+	public void removeFromCurso(Curso curso) {
+		curso.getAlumnos().remove(this);
+		this.curso = null;		
+	}
+	
 
 }
