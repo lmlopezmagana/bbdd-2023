@@ -51,12 +51,12 @@ public class MainDeMentira {
 		
 		repositorio.save(airbus320);
 		
-		/*Asiento asiento = airbus320.getAsientos().get(0);
+		Asiento asiento = airbus320.getAsientos().get(0);
 		airbus320.removeAsiento(asiento);
 		
-		repositorio.save(airbus320);*/
-		
-		//repositorio.delete(airbus320);
+		airbus320 = repositorio.save(airbus320);
+
+		repositorio.delete(airbus320);
 
 		
 	}
