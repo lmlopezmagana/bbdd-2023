@@ -21,7 +21,7 @@ JPA nos permite realizar operaciones en cascada con entidades. ¿Recuerdas las p
 
 Vamos a ver el código a través de un ejemplo. Sea el siguiente diagrama de clases de UML.
 
-![UML](.png/Model!Main_0.png)
+![UML](./png/Model!Main_0.png)
 
 ## Paso 1: Implementación de la asociación en el lado _muchos_
 
