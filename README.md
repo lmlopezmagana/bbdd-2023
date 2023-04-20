@@ -7,3 +7,4 @@ A continuación, se detallan los proyectos que se incluyen dentro del repositori
 
 - [Ejemplo 2 - ManyToOne](./ManyToOne/): ejemplo que en primera instancia implementa una asociación `@ManyToOne` de forma unidireccional, y que posteriormente la completa bidireccionalmente con una asociación `@OneToMany`. 
 
+- [Ejemplo 3 - Composición](./Composicion/): ejemplo de traslado de una asociación de composición, donde se gestiona el ciclo de vida de dos entidades a través de un único repositorio.
