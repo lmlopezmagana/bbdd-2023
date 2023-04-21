@@ -39,6 +39,11 @@ public class Asignatura {
 	@EqualsAndHashCode.Exclude
 	private List<Alumno> alumnos = new ArrayList<>();
 	
+	public Asignatura(String nombre, String profesor) {
+		this.nombre = nombre;
+		this.profesor = profesor;
+		this.alumnos = new ArrayList<>();
+	}
 	
 	/**
 	 * MÉTODOS HELPER

@@ -36,6 +36,8 @@ public class Alumno {
 	private Curso curso;
 	
 	
+	
+	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 			name = "matricula",
@@ -45,6 +47,12 @@ public class Alumno {
 	@Builder.Default
 	private List<Asignatura> asignaturas = new ArrayList<>();
 	
+	public Alumno(String nombre, String apellidos, String email) {
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.email = email;
+		this.asignaturas = new ArrayList<>();
+	}
 	
 	
 	/*
@@ -73,5 +81,7 @@ public class Alumno {
 		a.getAlumnos().remove(this);
 		this.asignaturas.remove(a);
 	}
+
+	
 
 }

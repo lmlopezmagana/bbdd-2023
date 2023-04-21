@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ManyToOneApplication {
+public class ManyToManyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ManyToOneApplication.class, args);
+		SpringApplication.run(ManyToManyApplication.class, args);
 	}
 
 }
