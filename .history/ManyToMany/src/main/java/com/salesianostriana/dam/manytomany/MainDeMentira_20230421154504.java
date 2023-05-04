@@ -102,6 +102,11 @@ public class MainDeMentira {
 		antonio.addAsignatura(entornos);
 		
 		alumnoServicio.edit(antonio);
+		
+		
+		
+		
+		
 
 	}
 
