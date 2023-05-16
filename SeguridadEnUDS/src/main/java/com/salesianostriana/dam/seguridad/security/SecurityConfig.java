@@ -20,6 +20,7 @@ public class SecurityConfig {
 	
 	private final UserDetailsService userDetailsService;
 	private final PasswordEncoder passwordEncoder;
+	private final RoleBasedSuccessHandler successHandler;
 	
 	@Bean
 	public AuthenticationManager 
@@ -66,13 +67,22 @@ public class SecurityConfig {
 		http
 		.authorizeRequests()
 			.antMatchers("/css/**","/js/**","/webjars/**", "/h2-console/**").permitAll()
+			.antMatchers("/").permitAll()
 			.antMatchers("/admin/**").hasRole("ADMIN")
 			.anyRequest().authenticated()
 			.and()
 		.formLogin()
 			.loginPage("/login")
-			.permitAll();
-		
+			//.defaultSuccessUrl("/web/index", true)
+			.successHandler(successHandler)
+			.permitAll()
+		.and()
+		.logout()
+			.logoutUrl("/logout")
+			.permitAll()			
+			.logoutSuccessUrl("/");
+			
+
 		// Añadimos esto para poder seguir accediendo a la consola de H2
 		// con Spring Security habilitado.
 		http.csrf().disable();

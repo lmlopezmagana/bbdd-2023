@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/logout}" method="POST" id="logoutForm"></form>
+	<h1>
+		Bienvenido <th:text="${nombre}">Usuario</span>
+		<p>Tienes el siguiente rol: <span th:text="${rol}">ROLE</span></p>
+	</h1>
+	<a href="javascript:document.getElementById('logoutForm').submit()">Salir</a>
+
+</body>
+</html>
