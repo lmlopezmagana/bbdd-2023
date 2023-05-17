@@ -67,20 +67,17 @@ public class MainDeMentira {
 		servicio.save(airbus320);
 		
 		airbus320.getAsientos().get(0).setTipo(TipoAsiento.TURISTA);
-		
-		airbus320.getAsientos().remove(123);
+
+		// Ya no podemos borrar así
+		//airbus320.getAsientos().remove(123);
+
+		// Podemos borrar por el id de asiento
+		airbus320.removeAsiento(123);
 		
 		servicio.save(airbus320);
 
 
-		/*
-		Asiento asiento = airbus320.getAsientos().get(0);
-		airbus320.removeAsiento(asiento);
-		
-		airbus320 = repositorio.save(airbus320);
 
-		repositorio.delete(airbus320);
-		 */
 		
 	}
 

@@ -1,7 +1,6 @@
 package com.salesianostriana.dam.composicion.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -43,10 +42,17 @@ public class Avion {
 	)
 	private List<Asiento> asientos = new ArrayList<>();
 
+	// Se devuelve una copia no modificable para evitar que se
+	// añadan elementos sin usar el método correspondiente.
+	public List<Asiento> getAsientos() {
+		return Collections.unmodifiableList(asientos);
+	}
+
 	
 	// MÉTODOS HELPER
 	
 	public void addAsiento(Asiento a) {
+		a.getAsientoPK().setAsiento_id(getAsientoIdNextval());
 		a.setAvion(this);
 		this.asientos.add(a);
 	}
@@ -54,7 +60,28 @@ public class Avion {
 	public void removeAsiento(Asiento a) {
 		this.asientos.remove(a);
 		a.setAvion(null);
-		
+	}
+
+	public void removeAsiento(long asiento_id) {
+		Optional<Asiento> a = asientos.stream()
+				.filter(asiento -> asiento.getAsientoPK().getAvion_id() == this.id && asiento.getAsientoPK().getAsiento_id() == asiento_id)
+				.findFirst();
+
+
+		if (a.isPresent())
+			removeAsiento(a.get());
+
+	}
+
+	public long getAsientoIdNextval() {
+		if (this.asientos.size() > 0) {
+			return this.asientos.stream()
+					.map(Asiento::getAsientoPK)
+					.map(AsientoPK::getAsiento_id)
+					.max(Comparator.naturalOrder())
+					.orElse(0l) + 1l;
+		} else
+			return 1l;
 	}
 	
 	

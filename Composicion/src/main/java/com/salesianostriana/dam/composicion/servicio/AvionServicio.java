@@ -15,9 +15,9 @@ public class AvionServicio
 	@Override
 	public Avion save(Avion t) {
 		
-		for(int i = 0; i < t.getAsientos().size(); i++) {
+		/*for(int i = 0; i < t.getAsientos().size(); i++) {
 			t.getAsientos().get(i).getAsientoPK().setAsiento_id(i+1L);
-		}
+		}*/
 		
 		return super.save(t);
 	}
