@@ -83,6 +83,10 @@ public class Avion {
 		} else
 			return 1l;
 	}
+
+	// Otra versión podría buscar mediante un bucle entre
+	// los ids almacenados cuál es el primero disponible
+	// y usarlo.
 	
 	
 	
