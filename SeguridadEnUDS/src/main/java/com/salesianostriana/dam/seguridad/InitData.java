@@ -26,12 +26,14 @@ public class InitData {
 				.admin(false)
 				.username("user")
 				//.password("1234")
+				.email("user@")
 				.password(passwordEncoder.encode("1234"))
 				.build();
 		
 		Usuario admin = Usuario.builder()
 				.admin(true)
 				.username("admin")
+				.email("admin@")
 				.password(passwordEncoder.encode("admin"))
 				.build();
 		

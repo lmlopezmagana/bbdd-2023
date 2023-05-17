@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -8,9 +8,7 @@
 <body>
 	<form th:action="@{/logout}" method="POST" id="logoutForm"></form>
 	<h1>
-		Bienvenido <th:text="${nombre}">Usuario</span>
-		<p>Tienes el siguiente rol: <span th:text="${rol}">ROLE</span></p>
-		<p>Email: <span sec:authentication="principal.email">Usuario</span></p>
+		Bienvenido, usuario:  <span sec:authentication="principal.email">Usuario</span>
 	</h1>
 	<a href="javascript:document.getElementById('logoutForm').submit()">Salir</a>
 
