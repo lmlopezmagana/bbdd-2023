@@ -53,7 +53,7 @@ public class Avion {
 	
 	public void removeAsiento(Asiento a) {
 		this.asientos.remove(a);
-		a.setAvion(null);
+		//a.setAvion(null);
 		
 	}
 	
